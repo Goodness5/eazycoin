@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "{% static 'wallet/script.js' %}"></script> 
+        <link rel="stylesheet" href="{% static 'wallet/mywallet.css' %}">
+    </head>
+    <body>
+        <h2>Hi {{user.username|capfirst}}</h2>
+<h1 style="color: aqua;">welcome</h1>
+<div class="container" id ="container">
+    
+<button onclick="myfunction()">pay into wallet</button>
+
+<div id="SubmitPayment">
+ 
+    <form class="formEl" method="POST" id="formEl" enctype="multipart/form-data">
+        {% if messages %}
+        {% for message in messages %}
+        <div>{{ message}}</div>
+        {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+        {{form}}
+        {% comment %} <label for="username">Username</label>
+        <input type= "text" name="username" placeholder="enter your username" value="{{user.username}}" disabled>
+        <label for="amount">Amount</label>
+        <input type="tel" name="amount" id="surname" placeholder="enter the amount paid"><br>
+        <label for="img">UploadPaymentSlip</label>
+        <input type="file" name="img" id="img" placeholder="upload your image here"> {% endcomment %}
+        
+        <input type = "submit" value="submit">
+    </form>
+</div>
+<button>return to dashboard</button>
+</div>
+<div id= "balance" class="balance">
+    
+</div>
+
+    </body>
+    </html>

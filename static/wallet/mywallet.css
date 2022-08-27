@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0; 
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    background-color: purple;
+    margin: 0 auto;
+}
+body{
+    background-color: purple;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#formEl{
+    background-color: white;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    width: 100%; 
+    transition: all 0.5 ease;
+   
+    
+}
+button{
+    width: 30%;
+    padding: 0.5em;
+    border-radius: 5em;
+    margin-top: 2em;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+button:hover{
+    background-color: purple;
+    border: solid white;
+    padding: 1em;
+    color: aqua;
+}
+#SubmitPayment{
+    width: 70%;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center; 
+    text-align: center;
+    background-color: white;
+    display: flex;
+}
+label{
+    text-align: left;
+    float: left;
+    color: red;
+}
+.balance{
+    top: 0;
+    position: absolute;
+    right: 0;
+    border: none;
+    max-width: 10%;
+    min-width: 10%;
+    max-height: 10%;
+    min-height: 10%;
+    background-color: white;
+}
