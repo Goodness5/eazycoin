@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>EZ INDEX</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+    <!-- responsive-->
+    <link rel="stylesheet" href="{% static 'accounts/css/responsive.css' %}">
+    <!-- awesome fontfamily -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+<style>
+
+</style>
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src={% static '"accounts/images/loading.gif"' %} alt="" /></div>
+    </div>
+    <!-- end loader -->
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="searvices.html">What We do</a>
+        <a href="#"  id="wallet" onclick="sufunc()">wallet</a>
+        <a href="contact.html">Contact</a>
+       <a href="#" id="wallet" onclick="sufunc()">Withdraw</a>
+        <a href="#" id="wallet" onclick="sufunc()">Logout</a>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="head-top">
+            <div class="container-fluid">
+                <div class="row d_flex">
+                    <div class="col-sm-3">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'accounts/images/ezcoin-logo1.png' %}" alt="" width="100px"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="social_icon text_align_right d_none">
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="email text_align_right">
+                            <li class="d_none"><a href="{% url 'dashboard' %}"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
+                            <li>
+                                <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- start slider section -->
+    <div id="top_section" class=" banner_main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="{% static 'accounts/images/img1.jpg' %}" alt="#"  width=""/></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>EZ Coin – Your Digital Wallet.<br></h1>
+                                                    <p>With your EZ Coin wallet, you are able to invest in EZ Xport Investment Limited’s exportation business from Nigeria to the UK, and the rest of the world.
+                                                    </p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="{% static 'accounts/images/img1.jpg' %}" alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>EZ Coin – Your Digital Wallet.<br></h1>
+                                                    <p>With your EZ Coin wallet, you are able to invest in EZ Xport Investment Limited’s exportation business from Nigeria to the UK, and the rest of the world.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="{% static 'accounts/images/coin.jpg' %}" alt="#" height="200px"/></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>INVEST YOUR EZ TOKEN FOR 30 days FOR 10% PROFIT.<br></h1>
+                                                    <p>Your fund is safe, Your wallet is secured.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slider section -->
+    <!-- wallet -->
+    <br>
+    <br><br>
+    <div class="user">
+        <a href="{% url 'signup' %}"><button class="bt1">signup</button></a>
+        <a href="{% url 'signin' %}"><button class="bt2">signin</button></a>
+    </div>
+   <div class="ez1">
+        <h1>WHAT IS EZ COIN</h1>
+        <p>EZ Coin is a new digital currency positioned to serve as a store of value for investors. 
+    Early investors stand a chance of high returns as the value appreciates slowly but steadily. <br>
+</div>
+<div class="ez2">
+    <p><img src="{% static 'accounts/images/img2.jpg' %}" alt="">  Store value with your EZ wallet <br>
+        You can easily get access to your funds whenever you want it.</p> 
+<p><img src="{% static 'accounts/images/img3.jpg' %}" alt="">Easily participate in export business with EZ Xport Investment Limited <br>
+    With your EZ Coin wallet, you can easily invest a token in exportation business which you probably might not have been able to achieve with little amount. <br></p> 
+
+<p>
+    <img src="{% static 'accounts/images/img4.jpg' %}" alt=""> Lots of other offers <br>
+Partake in offers and deals that are exclusively reserved for holders of the EZ Coin wallet. <br>
+</p>
+    </p>
+</div>
+    <!-- end wallet -->
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>INVEST YOUR EZ TOKEN FOR 30 days</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>
+                                        Invest tokens from your EZ Coin wallet for 30 days for 10% profit. Your investment will be pulled into a larger funds used to export commodities from Nigeria to the UK and the rest of the world.
+                                        
+                                        The process is simple:
+                                        
+                                       1.Sign up for an EZ wallet and login to your account <br>
+                                        2.Fund your account. <br>
+                                        3.Invest your coin token for 30 days
+                                        4.Withdraw your capital plus interest back to your wallet after 30 days.
+                                         </p>
+                                 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="{% static 'accounts/images/img1.jpg' %}" alt="#" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+    <!-- graf -->
+   
+   
+    <!-- end graf -->
+    <!-- testimonial -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>WHAT WE DO WITH YOUR TOKEN INVESTMENT</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>
+                                    <h2>Export commodities to the UK </h2>
+                                            <p> Visit our exportation portal - https://ezxportinvestment.com for details of our exportation business to the UK and the rest of the world.</h3>
+                                                Withdraw your capital plus interest back to your wallet after 30 days.</p>
+                                         </p>
+                                         <h2>Foreign Exchange </h2>
+                                         <p>
+                                            We buy and sell the following currencies:
+                                      <br>
+                                        Cedis <br>
+                                        Dollar <br>
+                                        Pounds <br>
+                                        South African Rands <br>
+                                        Chinese Yuan <br>
+                                         </p> 
+                                    <p>
+                                       <h2>Hospitality</h2> 
+                                       <p>
+                                        Hotel <br>
+Serviced Apartments
+                                       </p>
+                                    </p>
+                                 
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="{% static 'accounts/images/invest.jpg' %}" alt="#"  /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>BENEFIT WHEN YOU INVEST IN EZ COIN WALLET</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>
+                                        You enjoy the following benefits as an active investors  with EZ Coin: <br>
+                                        1) Guaranteed Return on Investment <br>
+
+                                        You enjoy 10% ROI in 30 days which you can withdraw or roll over. <br>
+                                        2) Free Legal Services <br>
+                                        As a member of the EZ family, you enjoy free legal consulting, nationwide.
+                                         </p> 
+
+                                 
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="{% static 'accounts/images/ezcoin-logo1.png' %}" alt="#" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- works -->
+    <!-- contact -->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage text_align_center">
+                        <h2>
+                            CONTACT EZ COIN</h2>
+                    </div>
+                </div>
+                <div class=" col-md-10 offset-md-1">
+                    <form id="request" method='POST' class="main_form">
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="contactus" placeholder="Email" type="type" name="Email">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="contactus" placeholder="Phone number" type="type" name="Phone number">
+                            </div>
+                            <div class="col-md-6">
+                                <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="send_btn">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="logo_bottom" href="index.html">EZXICOIN</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ">
+                  <div class="Informa conta ">
+                     <h3>Contact Us</h3>
+                     <ul>
+                        <li> <a href="Javascript:void(0) "> <i class="fa fa-map-marker " aria-hidden="true "></i> Abuja Nigeria
+                           </a>
+                        </li>
+                        <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> +44 7448 325625
+                           </a>
+                        </li>
+                        <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i> info@ezxicoin.com
+                           </a>
+                        </li>
+                     </ul>
+                  
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6 "">
+                        <div class="Informa helpful">
+                            <h3>Useful Link</h3>
+                            <ul>
+                                <li><a href="invest.html">INVEST</a>
+                                </li>
+                                <li><a href="Withdraw.html">WITHDRAW</a>
+                                </li>
+                                <li><a href="wallet.html">WALLET</a>
+                                </li>
+                                <li><a href="contact.html">CONTACT</a>
+                                </li>
+                                <li><a href="about.html">ABOUT</a>
+                                </li>
+                                <li><a href="searvices.html">WHAT WE DO</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ">
+                  <div class="Informa ">
+                     <h3>Offices</h3>
+                     <ul>
+                        <li>T12 Alibro Atrium, 33 A.E.                            
+                        </li>
+                        <li>Ekukinam St, Utako                      
+                        </li>
+                        <li>Abuja, FCT 900001                       
+                        </li>
+                        <li>Nigeria                           
+                        </li>
+
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6 ">
+                  <div class="Informa ">
+                     <h3>Newsletter</h3>
+                     <form class="newslatter_form " method='POST'>
+                        {% csrf_token %}
+                        <input class="ente " placeholder="Enter your email " type="text " name="Enter your email ">
+                        <button class="subs_btn ">Subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright text_align_center ">
+               <div class="container ">
+                  <div class="row ">
+                     <div class="col-md-12 ">
+                        <p>Copyright © 2022 EZ Coin. All Rights Reserved.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'accounts/js/jquery.min.js ' %}"></script>
+      <script src="{% static 'accounts/js/bootstrap.bundle.min.js' %} "></script>
+      <script src="{% static 'accounts/js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'accounts/js/custom.js' %}"></script>
+   </body>
+</html>

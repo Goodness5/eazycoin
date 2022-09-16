@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>EZ COIN</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" type="" href="{% static 'accounts/index.css' %}">
+</head>
+<body>
+<div class="navigation-bar">
+  <img src="{% static 'accounts/ezcoin-logo1.png' %}" class="logo">
+    <div id="navigation-container">
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">WHAT WE DO</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="{}"</a></li>
+      </ul>
+    </div>
+    <div.btns>
+      <a href="{% url 'signup' %}"><button> signup</button></a>
+      <a href="{% url 'signin' %}"><button > signin</button></a>
+    </div>
+    <div class="body" id="body"></div>
+
+<footer>
+<h2>Don't miss out, get your EZ Wallet now.</h2>
+<div>  
+Copyright © 2022 EZ Coin. All Rights Reserved.   
+</div>  
+</footer>
+</body>
+</html>

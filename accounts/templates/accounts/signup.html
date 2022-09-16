@@ -1,0 +1,67 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>EZ COIN</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
+<meta name="HandheldFriendly" content="true">
+</head>
+{% csrf_token %}
+<body>
+<div class="navigation-bar">
+    <div id="navigation-container">
+      <img src="{% static 'accounts/ezcoin-logo1.png' %}" alt="My image" class="logo">
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'index' %}">ABOUT</a></li>
+        <li><a href="{% url 'index' %}">WHAT WE DO</a></li>
+        <li><a href="{% url 'index' %}">CONTACT</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="form">
+      <form method="POST">
+        {% if messages %}
+        {% for message in messages %}
+        <div style="width:100%; color:red;">{{ message}}</div>
+        {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+      <label for="surname">Email</label>
+      <input type="mail" name="email" id="surname" placeholder="enter your email"><br>
+      <label for="firstname">Username</label>
+      <input type="text" name="username" id="firstname" placeholder="enter your username"><br>
+      <label for="firstname">Firstname</label>
+      <input type="text" name="first_name" id="firstname" placeholder="enter your firstname"><br>
+      <label for="firstname">Lastname</label>
+      <input type="text" name="last_name" id="firstname" placeholder="enter your lastname"><br>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="enter your password"><br>
+      <label for="password1">ConfirmPassword</label>
+      <input type="password" name="password1" id="password" placeholder="confirm password"><br>
+      <button type="submit" value="SignUp" class="signup">signup</button>
+      <p>Already have an account? <a href="{% url 'signin' %}">Login</a></p>
+    </form>
+  </div>
+    <p style="color: white; text-align:center">Don't miss out, get your EZ Wallet now.</p>
+    <div class="footer">
+      <p style="text-align: right;">Copyright &copy 2022 EZ Coin. All Rights Reserved. </p> 
+    </div>
+</body>
+</html> 
+
+
+
+{% comment %} <div class="container">
+  <form method="POST">
+    <fieldset>
+      <legend>Form</legend>
+      {% csrf_token %}
+      {{ form.as_p }}
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+</div> {% endcomment %}

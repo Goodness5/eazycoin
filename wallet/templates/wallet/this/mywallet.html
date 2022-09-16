@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "{% static 'wallet/script.js' %}"></script> 
+        <link rel="stylesheet" href="{% static 'wallet/mywallet.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+    </head>
+    <body >
+    <div class="navcont">
+          <img class="img" src="{% static 'accounts/ezcoin-logo1.png' %}" alt="My image" class="logo">
+          <ul class="top">
+            <li><a href="{% url 'dashboard' %}">HOME</a></li>
+                <li><a href="{% url 'index' %}">ABOUT</a></li>
+                    <li><a href="{% url 'index' %}">WHAT WE DO</a></li>
+                        <li><a href="#social" id="contactnav">CONTACT</a></li>
+          </ul>
+        </div>
+    </div>
+        <div class="head">
+        <h2>{{user.username|capfirst}}'s wallet</h2>
+    </div>
+    <div class="bal">
+        <label for="balance">wallet balance</label>
+        <p>{{accounts.profile.amount}}</p>
+        </div>
+<div class="container" id ="container">
+
+    {% if messages %}
+{% for message in messages %}
+<div style="width:100%; font: 1.5em itallic">{{ message}}</div>
+{% endfor %}
+{% endif %}
+    <div class="card1">
+<button onclick="myfunction()">pay into wallet</button>
+
+
+<div id="SubmitPayment">
+ 
+    <form class="formEl" method="POST" id="formEl" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type= "text" name="username" placeholder="enter your username">
+        <label for="amount">Amount</label>
+        <input type="tel" name="amount" id="surname" placeholder="enter the amount paid"><br>
+        <label for="img">UploadPaymentSlip</label>
+
+        <input type="file" name="img" id="img" value="upload your image here">
+                 <input id="submit" type="submit" value="submit">
+    </form>
+ 
+</div>
+</div>
+</div>
+<div class="footer">
+    <div class="contact">contact us  here</div>
+    <div class="social" id="social">
+        <ul class="bottom">
+            <li>Email</li>
+            <li>Whatsapp</li>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>discord<li>
+        </ul>
+    </div>
+    <div class="copyright"><p>&copy superman 2022</p></div>
+    
+
+</div>
+    </body>
+    </html>

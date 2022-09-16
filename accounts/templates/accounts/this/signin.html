@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign_in</title>
+    <link rel="stylesheet" href="{% static 'accounts/signin.css' %}">
+</head>
+<body>
+    
+    <div class="container" id="container">
+
+
+        <div id="head">  <img src="headerimg.png" class="headerimg" alt="" width="100%"></div>
+
+        <div class="img"> <img src="Signin.png" alt="image" class="imgs" width="100%" > </div>
+
+
+<div class="form">
+
+
+<form method="POST">
+    {% if messages %}
+        {% for message in messages %}
+        <div>{{ message}}</div>
+        {% endfor %}
+        {% endif %}
+    {% csrf_token %}
+
+    <div class="login" style="background-color: skyblue; height: 100%; justify-content: center;">
+        <div class="label"><label for="username">Username</label></div>
+        <input type="text" name="username" class="in" id="mail" required  placeholder="enter your username"><br><br>
+
+    <div class="label"><label for="password">Password</label></div>
+    <input type="password" class="in" name="password" required id="pwd" placeholder="michael joe">
+</div>
+
+<div id="formbt">
+    <div class="chk">
+        <input class="box" type="checkbox" name="remember"  id="rembme">
+        <label for="remember" class="rmb">Remember Me</label><br>
+    </div>
+
+    <div class="a"> <a href="#" class="fgt" style="color: purple"> Forgot Password?</a> </div>
+</div><br><br>
+
+
+<div class= "subm"><input type="submit" class="log" value="SignIn"></div><br><br>
+</form>
+
+<p>Dont have an account? <a href="{% url 'signup' %}" style="color: purple">SignUp</a></p>
+</div>
+</div>
+</div>
+<div class="ftimg"> <img class="ft" src="ftimg.png" alt=""></div>
+
+
+    <script src="signin.js"></script>
+</body>
+</html>
