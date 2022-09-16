@@ -9,6 +9,6 @@ urlpatterns = [
     path('', views.mywallet, name='mywallet'),
     path('services/', views.services, name= 'services'),
     path('withdraw/', views.withdraw, name='withdraw'),
-    
+  
    # path('pics/download_2.jpeg', views.viewpayment)
 ]

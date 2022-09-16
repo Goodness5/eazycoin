@@ -1,3 +1,4 @@
+
 from cProfile import Profile
 from cgitb import html
 from multiprocessing import AuthenticationError
@@ -17,14 +18,11 @@ from eazycoin import settings
 from .forms import ProfileUpdate
 from .models import profile
 
-#VIEWS FOR ACCOUNTS MANAGEMENT SETTINGS.
-
 
 #REGISTRATION VIEW FUNCTION
 def index(request):
     return render(request, 'accounts/index.html')
-    
-    
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -56,6 +54,18 @@ def signup(request):
                       ['User.email'], 
                       fail_silently=False,
                     )
+            messages.danger(request, 'password does not match')
+            return render(request, 'accounts/signup.html')
+        user_count = User.objects.filter(email = email).count()
+
+        if user_count > 0:
+            messages.info(request,'email already exists')
+            return render(request, 'accounts/signup.html')
+        else:
+            user = User.objects.create_user(email = email, username = username, password = password, first_name = first_name, last_name = last_name)
+            messages.success(request, 'account successfully created')
+            auth_user = authenticate(username = username, password = password )
+
             return redirect('signin')
     else:
         return render(request, 'accounts/signup.html')
