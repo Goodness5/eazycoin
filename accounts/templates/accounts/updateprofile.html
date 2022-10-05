@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
     <!-- responsive-->
     <link rel="stylesheet" href="{% static 'accounts/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
@@ -45,44 +46,40 @@
         <a href="{% url 'wallet:withdraw' %}">Withdraw</a>
         <a href="">Logout</a>
     </div>
-    <!-- header -->
-    <header>
-        <!-- header inner -->
-        <div class="head-top">
-            <div class="container-fluid">
-                <div class="row d_flex">
-                    <div class="col-sm-3">
-                        <div class="logo">
-                            <a href="">EZXICOIN</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <ul class="social_icon text_align_right d_none">
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <ul class="email text_align_right">
-                            <li class="d_none"><a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
-                            <li>
-                                <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <body class="main-layout">
+        <!-- loader  -->
+        <div class="loader_bg">
+            <div class="loader"><img src="{% static 'accounts/images/loading.gif' %}" alt="" /></div>
         </div>
-    </header>
+        <!-- end loader -->
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a  href="{% url 'index' %}">Home</a>
+            <a href="#">About</a>
+            <a href="{% url 'wallet:services' %}">What We do</a>
+            <a href="{% url 'wallet:mywallet' %}">wallet</a>
+            <a href="{% url 'contact' %}">Contact</a>
+    
+            <a href="{% url 'wallet:mywallet' %}">Invest</a>
+            <a href="{% url 'wallet:withdraw' %}">Withdraw</a>
+            <a href="#">Logout</a>
+        </div>
+        <!-- header -->
+        <header>
+            <div class="log"><img width="100%" src="{% static 'accounts/images/ezcoin-logo1.png' %}"></div>
+                               <div class="head"> <li class="d_none"><a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true">
+                                {% block content %}
+                                <h2>{{user.username|capfirst}}'s profile</h2>
+                               {% endblock %}
+                               </i></a></li>
+                                <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
+                                <li>
+                                    <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
+                                </div>      
+        </header>
+   
     <!-- end header -->
     <!-- testimonial -->
-    {% block content %}
-    <h2>{{user.username|capfirst}}'s profile</h2>
-   {% endblock %}
     <div class="testimonial">
         <div class="container-fluid">
             <div class="row">

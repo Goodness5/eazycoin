@@ -24,6 +24,7 @@ basic
 body {
      color: #666666;
      font-size: 14px;
+
      font-family: 'Poppins', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
@@ -112,7 +113,7 @@ li,
 ol {
      margin: 0px;
      padding: 0px;
-     list-style: none;
+     /* list-style: none; */
 }
 
 p {
@@ -329,14 +330,17 @@ ul.email li i {
 .sidepanel {
      width: 0;
      position: fixed;
+     /* min-width: 30%; */
+     /* min-height: 100vh; */
      z-index: 9999999;
      height: 100%;
      top: 0;
-     left: 0;
-     background-color: #111;
+     right: 0;
+     margin-top: 4%;
+     background-color: #0f132d;
      overflow-x: hidden;
      transition: 0.5s;
-     padding-top: 60px;
+     /* padding-top: 60px; */
 }
 
 .sidepanel a {
@@ -349,11 +353,12 @@ ul.email li i {
 }
 
 .sidepanel a:hover {
-     color: #face34;
+     color: blue;
+     padding: 0.5em;
 }
 
 .sidepanel a.active {
-     color: #face34;
+     color: blue;
 }
 
 .sidepanel .closebtn {
@@ -361,6 +366,10 @@ ul.email li i {
      top: 0;
      right: 25px;
      font-size: 36px;
+}
+.closebtn:hover{
+     padding: 0.5em;
+     color: blue;
 }
 
 .openbtn {

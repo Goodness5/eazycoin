@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
     <!-- responsive-->
     <link rel="stylesheet" href="{% static 'accounts/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
@@ -28,9 +29,6 @@
 <!-- body -->
 
 <body class="main-layout">
-    {% block content %}
- <h2>welcome {{user.username|capfirst}}</h2>
-{% endblock %}
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="{% static 'accounts/images/loading.gif' %}" alt="" /></div>
@@ -45,42 +43,46 @@
         <a href="{% url 'contact' %}">Contact</a>
        
         <a href="{% url 'wallet:mywallet' %}">Invest</a>
-        <a href="{% url 'wallet:mywallet' %}">Withdraw</a>
+        <a href="{% url 'wallet:withdraw' %}">Withdraw</a>
         <a href="">Logout</a>
     </div>
-    <!-- header -->
-    <header>
-        <!-- header inner -->
-        <div class="head-top">
-            <div class="container-fluid">
-                <div class="row d_flex">
-                    <div class="col-sm-3">
-                        <div class="logo">
-                            <a href="{% url 'dashboard' %}">EZXICOIN</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <ul class="social_icon text_align_right d_none">
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <ul class="email text_align_right">
-                            <li class="d_none"><a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
-                            <li>
-                                <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <body class="main-layout">
+        <!-- loader  -->
+        <div class="loader_bg">
+            <div class="loader"><img src="{% static 'accounts/images/loading.gif' %}" alt="" /></div>
         </div>
-    </header>
+        <!-- end loader -->
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a  href="{% url 'index' %}">Home</a>
+            <a href="#">About</a>
+            <a href="{% url 'wallet:services' %}">What We do</a>
+            <a href="{% url 'wallet:mywallet' %}">wallet</a>
+            <a href="{% url 'contact' %}">Contact</a>
+    
+            <a href="{% url 'wallet:mywallet' %}">Invest</a>
+            <a href="{% url 'wallet:withdraw' %}">Withdraw</a>
+            <a href="#">Logout</a>
+        </div>
+        <!-- header -->
+        <header>
+            <div class="log"><img width="100%" src="{% static 'accounts/images/ezcoin-logo1.png' %}"></div>
+                    <div class="profilepic"><img src="" alt=""></div>
+                               <div class="head">
+
+                                <div  style="display:flex; flex-direction: row; color:white !important; min-width:60% !important;">
+                                     {% block content %}
+                                    <i class="fa fa-user">
+                                    {{user.username|capfirst}}'s profile
+                                    </i></a>
+                               {% endblock %}
+                                </div>
+                               
+                                <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
+                                <li>
+                                    <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
+                                </div>      
+        </header>
     <!-- end header -->
     <!-- testimonial -->
     <div class="testimonial">
@@ -139,93 +141,59 @@
     </div>
     <!-- end testimonial -->
     <!-- footer -->
-    <footer>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="logo_bottom" href="{% url 'dashboard' %}">EZXICOIN</a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" ">
-                  <div class="Informa conta ">
-                     <h3>Contact Us</h3>
-                     <ul>
-                        <li> <a href="Javascript:void(0) "> <i class="fa fa-map-marker " aria-hidden="true "></i> Abuja Nigeria
-                           </a>
-                        </li>
-                        <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> +44 7448 325625
-                           </a>
-                        </li>
-                        <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i> info@ezxicoin.com
-                           </a>
-                        </li>
-                     </ul>
+    <br><br>
+    <div id="correct"> 
+        <div class="contact" style="color:brown!important;">
+           <h3>Contact Us</h3>
+              <li> <a href="Javascript:void(0) "> <i class="fa fa-map-marker " aria-hidden="true "></i> Abuja Nigeria</a></li> 
+              <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> +44 7448 325625
+                 </a>
+              </li>
+              <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i>info@ezxicoin.com </a>
+              </li>
+          <div class="so">
+              <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
+              <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+              <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          </div>
+        
+        </div><br><br>
+     <div class="just">
+                  <h3>Useful Links</h3>
                   
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6 "">
-                        <div class="Informa helpful">
-                            <h3>Useful Link</h3>
-                            <ul>
-                                <li><a href="{% url 'wallet:mywallet' %}">INVEST</a>
-                                </li>
-                                <li><a href="{% url 'wallet:withdraw' %}">WITHDRAW</a>
-                                </li>
-                                <li><a href="{% url 'wallet:mywallet' %}">WALLET</a>
-                                </li>
-                                <li><a href="{% url 'contact' %}">CONTACT</a>
-                                </li>
-                                <li><a href="{% url 'about' %}">ABOUT</a>
-                                </li>
-                                <li><a href="{% url 'wallet:services' %}">WHAT WE DO</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6" ">
-                  <div class="Informa ">
-                     <h3>Offices</h3>
-                     <ul>
-                        <li>T12 Alibro Atrium, 33 A.E.                            
-                        </li>
-                        <li>Ekukinam St, Utako                      
-                        </li>
-                        <li>Abuja, FCT 900001                       
-                        </li>
-                        <li>Nigeria                           
-                        </li>
+                      <li><a href="{% url 'wallet:mywallet' %}">INVEST</a</li><br>
+                      <li><a href="{% url 'wallet:withdraw' %}">WITHDRAW</li><br>
+                      <li><a href="{% url 'wallet:mywallet' %}">WALLET</a></li><br>
+                      <li><a href="{% url 'contact' %}">CONTACT</a></li><br>
+                      <li><a href="{% url 'about' %}">ABOUT</a></li><br>
+                      <li><a href="{% url 'wallet:services' %}">WHAT WE DO</a></li>
+              </div><br><br>
 
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6 ">
-                  <div class="Informa ">
-                     <h3>Newsletter</h3>
-                     <form class="newslatter_form " method="POST">
-                        {% csrf_token %}
-                        <input class="ente " placeholder="Enter your email " type="text " name="Enter your email ">
-                        <button class="subs_btn ">Subscribe</button>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright text_align_center ">
-               <div class="container ">
-                  <div class="row ">
-                     <div class="col-md-12 ">
-                        <p>Copyright © 2022 EZ Coin. All Rights Reserved.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="{% static 'accounts/js/jquery.min.js' %}"></script>
-      <script src="{% static 'accounts/js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'accounts/js/jquery-3.0.0.min.js' %}"></script>
-      <script src="{% static 'accounts/js/custom.js' %}"></script>
-   </body>
+        <div class="office">
+           <h3>Offices</h3>
+          <p style=" color: #3b3838 !important; font-weight:bolder;"> T12 Alibro Atrium, 33 A.E.Ekukinam St, Utako Abuja,<br> FCT 900001 Nigeria</p>           
+        </div><br>
+        <div class="pink">
+           <h3>Newsletter</h3>
+           <p>Subscribe to our Newsletter to receive updates from us</p>
+           <form class="" action="" method="POST">
+              {% csrf_token %}
+              <input class="letter" placeholder="Enter your email " type="mail" name="Enter your email ">
+              <button type="submit" value="Subscribe" class="sub">signup</button>
+           </form>
+          </div>
+      </div><br><br><br>
+  <div class="copy" style="margin:0 auto; text-align:center;">                     
+              <p>Copyright © 2022 EZ Coin. All Rights Reserved.</p>
+</div>
+</div>
+<!-- end footer -->
+<!-- Javascript files-->
+<script src="{% static 'accounts/js/jquery.min.js' %}"></script>
+<script src="{% static 'accounts/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'accounts/js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'accounts/js/custom.js' %}"></script>
+</body>
 </html>
