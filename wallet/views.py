@@ -1,7 +1,9 @@
 from email import message
 import mailbox
+from re import X
+from accounts.models import profile
 from eazycoin import settings
-
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -15,13 +17,14 @@ from .models import PaymentProve
 from django.core.mail import send_mail, mail_admins
 
 
-# Create your views here.
-# @login_required
-# def viewpayment(request):
-#     if request.user.is_superuser:
-#         return render(request, 'wallet/pics')
-@login_required    
+
+@login_required   
 def mywallet(request):
+    prof = profile.objects.all()
+    context = {
+    'profile': prof
+  }
+    # user = request.Profile
     if request.method == 'POST':
         p_form =PaymentForm(request.POST)
         if p_form.is_valid():
@@ -37,9 +40,11 @@ def mywallet(request):
             messages.info(request, 'not submitted')
         
     else:
-        p_form = PaymentForm()
-    return render(request, 'wallet/mywallet.html', {'form':p_form})
+        p_form = PaymentForm()    
 
+    return render(request, 'wallet/mywallet.html', context)
+
+    
 def services(request):
         return render(request, 'wallet/services.html')
     
