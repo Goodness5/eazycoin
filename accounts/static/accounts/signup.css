@@ -399,3 +399,18 @@ ul#list li{
     margin-top: 7%;
   }
 }
+.dash{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 255, 0.159);
+  color: white;
+  width: 70%;
+  min-height: 50vh;
+  text-align: center;
+  justify-content: space-between;
+  justify-items: left;
+  border-radius: 1em;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}

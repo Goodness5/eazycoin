@@ -20,7 +20,7 @@ class profile(models.Model):
     username= models.CharField(max_length=255)
     phone = models.CharField(max_length=50)
     dateofbirth = models.DateField(default=date.today)
-    img = models.ImageField(default= 'img')
+    img = models.ImageField(default= 'img', upload_to="eazycoin/media/")
     wallet_balance = models.CharField(max_length=20)
      
     def balance(wallet_balance):
@@ -30,10 +30,7 @@ class profile(models.Model):
             for i in x:
                 i.object.filter(datetime > 5).count
                 return i+1
-            return x
-
-        
-    
+            return x 
     def save(self):
         super().save()
     def __str__(self):

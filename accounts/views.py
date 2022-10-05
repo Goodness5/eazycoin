@@ -1,7 +1,8 @@
-
+from multiprocessing import context
 from cProfile import Profile
 from cgitb import html
 from multiprocessing import AuthenticationError
+from symbol import return_stmt
 from tabnanny import check
 from xml.sax.handler import feature_external_ges
 from django.shortcuts import render, redirect
@@ -9,12 +10,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from .forms import signup
 from django.http import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
-from eazycoin import settings
 from .forms import ProfileUpdate
 from .models import profile
 
@@ -54,8 +53,6 @@ def signup(request):
                       ['User.email'], 
                       fail_silently=False,
                     )
-            messages.danger(request, 'password does not match')
-            return render(request, 'accounts/signup.html')
         user_count = User.objects.filter(email = email).count()
 
         if user_count > 0:
@@ -90,15 +87,24 @@ def signin(request):
 
 @login_required 
 def dashboard(request):
+    prof = profile.objects.all()
+    context = {
+    'profile': prof
+  }
     if User is not None:
         return render(request, 'accounts/dashboard.html')
     else:
         AuthenticationError('login is reqired')
+    return render(request, 'accounts/dashboard.html', context)
 
 #PROFILE VIEW DASHBOARD
 
 @login_required    
 def profile(request):
+#     prof = profile.objects.all()
+#     context = {
+#     'profile': prof
+#   }
     if request.method == 'POST': 
         username = request.POST.get('username')
         phone = request.POST['phone']
@@ -120,7 +126,7 @@ def profile(request):
         
     else:
         form = ProfileUpdate()
-        return render(request, 'accounts/updateprofile.html')
+        return render(request, 'accounts/updateprofile.html', context)
     
     
     

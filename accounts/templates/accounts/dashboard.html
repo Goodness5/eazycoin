@@ -67,7 +67,9 @@
         <!-- header -->
         <header>
             <div class="log"><img width="100%" src="{% static 'accounts/images/ezcoin-logo1.png' %}"></div>
-                    <div class="profilepic"><img src="" alt=""></div>
+                    <div class="profilepic">{% for this in profile %}
+                        <img src="{{this.img}}" alt=""></div>
+                        {% endfor %}
                                <div class="head">
 
                                 <div  style="display:flex; flex-direction: row; color:white !important; min-width:60% !important;">
@@ -83,65 +85,20 @@
                                     <button class="openbtn" onclick="openNav()"><img src="{% static 'accounts/images/menu_btn.png' %}"></button>
                                 </div>      
         </header>
-    <!-- end header -->
-    <!-- testimonial -->
-    <div class="testimonial">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="border_testi">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="titlepage text_align_center">
-                                    <h2>Profile</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d_flex">
-                            <div class="col-md-10 offset-md-1">
-                                <div id="testimo" class="carousel slide our_testimonial" data-ride="carousel">
-                                   
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="container">
-                                                <div class="carousel-caption posi_in">
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="testomoniam_text text_align_center">
-                                                               
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="testomoniam_text text_align_left">
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                       
-                                    <a class="carousel-control-prev" href="#testimo" role="button" data-slide="prev">
-                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                        
-                                    </a>
-                                    <a class="carousel-control-next" href="#testimo" role="button" data-slide="next">
-                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                      
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end testimonial -->
-    <!-- footer -->
-    <br><br>
+   <div class="dash">
+    <p>Username: {{user.username}}</p>
+        <p>firstname: {{user.first_name}}</p>
+        <p>lastname: {{user.last_name}}</p>
+        <p>welcome to your dashboard {{user.username}}</p>
+        {% for this in profile %}
+        <h1>{{this.phone}} ryry</h1>
+        {% endfor %}
+        {% if messages %}
+        {% for message in messages %}
+        <div>{{message}}</div>
+        {% endfor %}
+        {% endif %}
+   </div>
     <div id="correct"> 
         <div class="contact" style="color:brown!important;">
            <h3>Contact Us</h3>
