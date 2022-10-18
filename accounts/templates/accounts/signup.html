@@ -38,14 +38,14 @@
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a  href="{% url 'index' %}">Home</a>
-        <a href="#">About</a>
+        <a href="{% url 'about' %}">About</a>
         <a href="{% url 'wallet:services' %}">What We do</a>
         <a href="{% url 'wallet:mywallet' %}">wallet</a>
         <a href="{% url 'contact' %}">Contact</a>
 
         <a href="{% url 'wallet:mywallet' %}">Invest</a>
         <a href="{% url 'wallet:withdraw' %}">Withdraw</a>
-        <a href="#">Logout</a>
+        <a href="{% url 'logout' %}">Logout</a>
     </div>
     <!-- header -->
     <header>

@@ -113,7 +113,7 @@ li,
 ol {
      margin: 0px;
      padding: 0px;
-     list-style: none;
+     /* list-style: none; */
 }
 
 p {
@@ -990,4 +990,11 @@ ul.email li i {
 .bt2{
      right: 80%;
      position: relative;
+}
+.card1{
+     display: flex;
+     flex-direction: column;
+     background-color: red;
+     width: 70%;
+     min-height: 30vh;
 }

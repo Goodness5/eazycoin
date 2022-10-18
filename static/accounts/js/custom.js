@@ -112,3 +112,9 @@ function sufunc() {
 	document.getElementById("wallet")= alert('you need to login or signup first to access this feature');
 	
 }
+document.addEventListener("click", function handleClickOutsideBox(event){
+	x = document.getElementById('mySidepanel')
+	if(x.contains(event.target)){
+		x.style.width="0";
+	}
+});

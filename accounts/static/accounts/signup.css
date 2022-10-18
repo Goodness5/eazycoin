@@ -265,11 +265,21 @@
     flex-direction: row;
   }
   .log{
-    width: 20%;
-    /* background-color: red; */
-    float: left;
-    margin-left: 0%;
-    margin-top: 0;
+    width: 5%;
+    background-color: red;
+    /* float: left; */
+    /* display: flex; */
+    /* margin: 0 auto; */
+    /* flex-direction: row; */
+    /* margin-left: -3%; */
+    margin-top: 0%;
+    /* height: 20vh; */
+    /* overflow: hidden; */
+    /* padding: 3%; */
+
+  }
+  input:invalid{
+    color: red;
   }
   @media screen and (max-width:800px) {
     .contact{

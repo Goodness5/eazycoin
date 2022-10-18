@@ -1,6 +1,6 @@
     li a{
       color: #6e6c6c;
-      list-style-type: disc;
+      /* list-style-type: disc; */
     }
     .form{
     width:80%;
@@ -50,8 +50,9 @@
     }
     li{
     display:inline;
-    padding:2px;
-    margin:6px;
+    padding:2%;
+    list-style-type: disc;
+    
     
     }
     li a{
@@ -265,10 +266,20 @@
   }
   .log{
     width: 10%;
-    /* background-color: red; */
+    background-color: red;
     float: left;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
     margin-left: 0%;
-    margin-top: 0;
+    margin-top: 5%;
+    height: 20vh;
+    overflow: hidden;
+    padding: 3%;
+
+  }
+  input:invalid{
+    color: red;
   }
   @media screen and (max-width:800px) {
     .contact{
@@ -288,24 +299,128 @@
     display: flex;
     flex-direction: row;
   }
-  /*
-  #links{
-    text-decoration: underline;
-    float: left !important;
-    /* margin-left: 10%; */
-    /* list-style-type: disc; */
-    /* color: #222222 !important;
-    text-decoration: underline;
-    font-size: 1em;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    float: left;
-  }  */
-  /* .just{
+  .profilepic{
+    min-height: 12vh;
+    /* margin: 0 auto; */
+    border-radius: 50%;
+    background-color: white;
+    width: 12vh;
+    float: right;
+    position: relative;
+    margin-right: 0%;
+  }
+  #abt{
+    /* background-color: green; */
+    border-radius: 2em;
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    /* font-family: monospace; */
+  }
+#abt>li{
+  display: block !important;
+  color: white !important;
+}
+.business{
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  box-shadow: 2px 1px 2px 2px rgba(1, 1, 8, 0.475);
+  background-image: linear-gradient(25deg, #630a8f17 8%, rgba(0, 0, 0, 0.204) 90%);
+  padding: 2%;
+  text-align: center;
+}
+.aboutimage{
+  width: 100%;
+}
+.aboutimgdiv{
+  margin: 0 auto;
+  width: 50%;
+  /* background-color: red; */
+  border-radius: 2%;
+  box-shadow: 2px 1px 2px 2px rgba(1, 1, 8, 0.475);
+  background-image: linear-gradient(25deg, #630a8f17 8%, rgba(0, 0, 0, 0.204) 90%);
+}
+#list{
+  color: inherit !important;
+  list-style-type: circle !important;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  font-style: italic;
+  color: rgba(155, 174, 174, 0.904) !important;
+}
+ul#list li{
+  /* background-color: red; */
+  list-style-type: square !important;
+}
+.abtcont{
+  margin-top: 5%;
+  text-align: center;
+  justify-items: center;
+  /* background-color: red; */
+  border-radius: 2%;
+  box-shadow: 2px 1px 2px 2px rgba(1, 1, 8, 0.475);
+  background-image: linear-gradient(25deg, #630a8f17 8%, rgba(0, 0, 0, 0.204) 90%);
+}
+.abtcont>p{
+  color: rgba(155, 174, 174, 0.904) !important;
+  margin-top: 3%;
+}
+.charity{
+  margin-top: 5%;
+  text-align: center;
+  justify-items: center;
+  display: flex;
+  flex-direction: column !important;
+  border-radius: 2%;
+  color: rgba(155, 174, 174, 0.904) !important;
+  box-shadow: 2px 1px 2px 2px rgba(1, 1, 8, 0.475);
+  background-image: linear-gradient(25deg, #630a8f17 8%, rgba(0, 0, 0, 0.204) 90%);
+  margin-bottom: 0;
+  font-weight: bolder;
+  /* max-height: 40vh; */
+  /* justify-content: space-around; */
+  line-height: 0;
+}
+.charity>li{
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+@media screen and (max-width:800px) {
+  .charity{
+    width: 80%;
     margin: 0 auto;
-    float: left;
-  } */
+    margin-top: 7%;
+  }
+  .abtcont{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 7%;
+    justify-content: space-between;
+  }
+  .business{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 7%;
+  }
+}
+.dash{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 255, 0.159);
+  color: white;
+  width: 70%;
+  min-height: 50vh;
+  text-align: center;
+  justify-content: space-between;
+  justify-items: left;
+  border-radius: 1em;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}

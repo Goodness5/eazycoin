@@ -24,6 +24,7 @@ class signin(forms.ModelForm):
         model = User
         fields = '__all__'
         
+        
 
 class ProfileUpdate(forms.ModelForm):
     # username=forms.CharField(max_length=255)

@@ -13,5 +13,6 @@ urlpatterns = [
     path('dashboard/updateprofile/', views.profile, name= 'profile'),
     path('contact/', views.contact, name='contact'),
     path("about/", views.about, name="about"),
+    path('logout/', views.logout, name= 'logout')
 
 ] 

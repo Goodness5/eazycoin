@@ -957,3 +957,10 @@ ul.email li i {
      font-size:50px;
      text-align: center;
 }
+.card1{
+     display: flex;
+     flex-direction: column;
+     /* background-color: red; */
+     width: 70%;
+     min-height: 30vh;
+}

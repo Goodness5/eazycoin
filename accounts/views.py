@@ -1,9 +1,6 @@
 from multiprocessing import context
-from cProfile import Profile
 from cgitb import html
 from multiprocessing import AuthenticationError
-from symbol import return_stmt
-from tabnanny import check
 from xml.sax.handler import feature_external_ges
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -16,6 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from .forms import ProfileUpdate
 from .models import profile
+from django.contrib.auth import logout
 
 
 #REGISTRATION VIEW FUNCTION
@@ -83,19 +81,6 @@ def signin(request):
         
         return render(request, 'accounts/signin.html')
     
-#DASHBOARD VIEW FUNCTION
-
-@login_required 
-def dashboard(request):
-    prof = profile.objects.all()
-    context = {
-    'profile': prof
-  }
-    if User is not None:
-        return render(request, 'accounts/dashboard.html')
-    else:
-        AuthenticationError('login is reqired')
-    return render(request, 'accounts/dashboard.html', context)
 
 #PROFILE VIEW DASHBOARD
 
@@ -137,3 +122,22 @@ def about(request):
     return render(request, 'accounts/about.html')
     
         
+@login_required 
+def dashboard(request):
+    prof = User.objects.all()
+    context = {
+    'prof': profile
+  }
+    if User is not None:
+        return render(request, 'accounts/dashboard.html', context)
+    else:
+        AuthenticationError('login is reqired')
+        
+@login_required
+def logout(request):
+    if User is not None:
+        return redirect('index')
+    else:
+        AuthenticationError('you are currently not logged in')
+        return redirect('signin')
+    
