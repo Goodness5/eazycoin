@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*u#hzwe#ltpq!ra1xf*mdhq!q%8)k-!wn0a*l+sp&1=g3de%+j
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ezxicoin.herokuapp.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.'
 
@@ -134,3 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FROM_EMAIL = "goodnesskolapo@gmail.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_HOST_USER ='goodnesskolapo@gmail.com'
+
+LOGOUT_REDIRECT_URL = 'index.html/'
