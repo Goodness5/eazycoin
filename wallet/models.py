@@ -1,5 +1,4 @@
 from email.policy import default
-from typing_extensions import Required
 from django.db import models
 from django.utils import timezone
 from django.forms import DateTimeField
