@@ -2,7 +2,6 @@ from distutils.command.upload import upload
 import email
 from email.policy import default
 from time import timezone
-from typing_extensions import Required, Self
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
