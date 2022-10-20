@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'wallet.apps.WalletConfig',
+    'newsletter.apps.newsletterConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIR = os.path.join(BASE_DIR, '/static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, '/static')
 MEDIA_URL = '/ media /'
 
 # Default primary key field type
