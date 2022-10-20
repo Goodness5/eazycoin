@@ -17,7 +17,7 @@ from os.path import dirname, join
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings.dev")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eazycoin.settings.dev")
 
 
 # Quick-start development settings - unsuitable for production

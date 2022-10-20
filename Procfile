@@ -1,1 +1,1 @@
-web: gunicorn eazycoin.wsgi
+web: gunicorn eazycoin.wsgi: application
