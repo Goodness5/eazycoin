@@ -25,6 +25,7 @@ urlpatterns = [
     path(r'', views.index, name='index'),
     path('accounts/', include('accounts.urls')),
     path('wallet/',  include('wallet.urls')),
+    path('newsletter/', include('newsletter.urls')),
     
     ]
 if  settings.DEBUG :
