@@ -17,6 +17,8 @@ from os.path import dirname, join
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings.dev")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -25,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*u#hzwe#ltpq!ra1xf*mdhq!q%8)k-!wn0a*l+sp&1=g3de%+j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['ezxicoin.herokuapp.com', 'localhost', '127.0.0.1']
 
 EMAIL_BACKEND = 'django.core.mail.backends.'
@@ -137,4 +139,4 @@ EMAIL_HOST_USER ='goodnesskolapo@gmail.com'
 
 LOGOUT_REDIRECT_URL = 'index.html/'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
