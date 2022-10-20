@@ -131,4 +131,4 @@ dmypy.json
 .env
 .sqlite3
 db.sqlite3
-eazycoin/settings.py
+# eazycoin/settings.py
