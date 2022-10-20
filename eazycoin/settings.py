@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*u#hzwe#ltpq!ra1xf*mdhq!q%8)k-!wn0a*l+sp&1=g3de%+j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['ezxicoin.herokuapp.com', 'localhost', '127.0.0.1']
 
 EMAIL_BACKEND = 'django.core.mail.backends.'
@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'wallet.apps.WalletConfig',
     'newsletter',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
 ]
-SITE_ID = 1
+# SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
