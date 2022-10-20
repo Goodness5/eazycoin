@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1">{{user.username}} welcome</h1></div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>update your  profile</h1>
+        <label for="username">username</label>
+            <input type="text" id="username" name="username" value="">
+        <label for="img">upload your profile picture</label>
+            <input type="file" id="img" name="file" value="upload your pic">
+        <label for="dateofbirth">your date of birth</label>
+            <input type="date"  name="dateofbirth" id="dateofbirth">
+        <label for="phone">your phone number</label>
+            <input type="tel" name="phone" id="phone">
+
+            <input type="submit" value="update profile">
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!--Your HTML code here-->
+
+
+<!--DTL(Django Template Language)-->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>dashboard</title>
+    </head>
+        <body>
+            <div class="topnav" id="myTopnav">
+                <ul>
+                  <li><img src=""></li>
+                <li><a href="{% url 'profile' %}">Updateprofile</a></li>
+               <li> <a href="" class="">Logout</a></li>
+                </ul>
+{% block content %}
+ <h2>Hi {{user.username|capfirst}}</h2>
+{% endblock %}
+
+<nav>
+    <a href="{% url 'wallet:mywallet' %}"><li>wallet</li></a>
+    </nav>
+
+
+
+
+
+
+
+</body>
+</html>
