@@ -5,14 +5,18 @@ import eazycoin
 from . import views
 from django.contrib.auth import views as auth_views
 
+import accounts
+
+app_name = 'accounts'
+
 urlpatterns = [
-    path('signup/', views.signup, name= 'signup'),
+    path('signup/', views.signup, name='signup'),
     #path('signin/', auth_views.LoginView.as_view(template_name = 'accounts/signin.html'), name = 'signin'),
-    path('signin/', views.signin, name = 'signin'),
+    path('signin/', views.signin, name='signin'),
     path('dashboard/', views.dashboard, name= 'dashboard'),
     path('dashboard/updateprofile/', views.profile, name= 'profile'),
     path('contact/', views.contact, name='contact'),
-    path("about/", views.about, name="about"),
-    path('logout/', views.logout, name= 'logout')
+    path("about/", views.about, name='about'),
+    path('logout/', views.logout, name='logout'),
 
 ] 

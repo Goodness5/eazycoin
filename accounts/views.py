@@ -1,7 +1,7 @@
 from multiprocessing import context
-from cgitb import html
+# from cgitb import html
 from multiprocessing import AuthenticationError
-from xml.sax.handler import feature_external_ges
+# from xml.sax.handler import feature_external_ges
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -111,13 +111,16 @@ def profile(request):
         
     else:
         form = ProfileUpdate()
-        return render(request, 'accounts/updateprofile.html', context)
+        return render(request, 'accounts/updateprofile.html')
     
     
     
         
 def contact(request):
     return render(request, 'accounts/contact.html')
+
+
+
 def about(request):
     return render(request, 'accounts/about.html')
     

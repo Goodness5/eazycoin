@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'wallet.apps.WalletConfig',
     'newsletter',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
 ]
-# SITE_ID = 1
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
