@@ -18,6 +18,9 @@ from accounts import views
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from . import settings
+# from django.templatetags.static import static
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +29,7 @@ urlpatterns = [
     path('wallet/', include('wallet.urls')),
     # path('newsletter/', include('newsletter.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
