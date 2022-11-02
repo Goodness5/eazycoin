@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
@@ -37,4 +38,5 @@ def subscribe(request):
         subscribe_model_instance.save()
         messages.success(request, f'{email} email was successfully subscribed to our newsletter!')
         return redirect(request )
+    return HttpResponse(request, 'subscribed')
 

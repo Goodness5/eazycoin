@@ -1,13 +1,13 @@
 from django.urls import path
 
-from accounts.models import profile
-import eazycoin
+# from accounts.models import profile
+# import eazycoin
 from . import views
 from django.contrib.auth import views as auth_views
 
-import accounts
+# import accounts
 
-app_name = 'accounts'
+# app_name = 'accounts'
 
 urlpatterns = [
     path('signup/', views.signup, name='signup'),

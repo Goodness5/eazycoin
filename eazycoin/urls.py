@@ -13,20 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from xml.etree.ElementInclude import include
-from django.contrib import admin
-from django.urls import include, path
+# from unicodedata import name
 from accounts import views
-from django.conf import settings
-from django.conf.urls.static import static
+# from eazycoin import accounts
+# from wallet import views
+from django.contrib import admin
+from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'', views.index, name='index'),
     path('accounts/', include('accounts.urls')),
-    path('wallet/',  include('wallet.urls')),
-    path('newsletter/', include('newsletter.urls')),
-    
-    ]
-# if  settings.DEBUG :
-#     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    path(r'', views.index, name='index'),
+    path('wallet/', include('wallet.urls')),
+    # path('newsletter/', include('newsletter.urls')),
+]
