@@ -90,8 +90,8 @@ DATABASES = {
        'NAME': 'db',
        'USER': 'superman',
        'PASSWORD': 'supes',
-       'HOST': '127.0.0.1',
-        'port': '8071',
+       'HOST': 'ezxicoin.herokuapps.com',
+        # 'port': '8071',
         }
 }
 DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
