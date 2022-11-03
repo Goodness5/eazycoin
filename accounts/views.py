@@ -45,12 +45,14 @@ def signup(request):
             user.save()
             messages.success(request, 'account successfully created')
             auth_user = authenticate(username = username, password = password )
-            send_mail('welcome message', 
+            def mail(request):
+                send_mail('welcome message', 
                       'welcome test',
                       ['settings.EMAIL_HOST_USER'],
                       ['User.email'], 
                       fail_silently=False,
                     )
+                return mail()
         user_count = User.objects.filter(email = email).count()
 
         if user_count > 0:
