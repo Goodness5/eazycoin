@@ -94,7 +94,7 @@ DATABASES = {
         'port': '5432',
         }
 }
-DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
+# DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
 
 
 # Password validation
@@ -155,4 +155,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_FROM = 'goodnesskolapo@gmail.com'
+EMAIL_HOST_USER = 'goodnesskolapo@gmail.com'
+EMAIL_HOST_PASSWORD = 'oluwatemilorun'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# PASSWORD_RESET_TIMEOUT = 14400
 
