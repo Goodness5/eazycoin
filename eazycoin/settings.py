@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+# from . import postgres
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,11 +81,20 @@ WSGI_APPLICATION = 'eazycoin.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
+      'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'db',
+       'USER': 'superman',
+       'PASSWORD': 'supes',
+       'HOST': '127.0.0.1',
+        'port': '8071',
+        }
 }
+DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
 
 
 # Password validation
