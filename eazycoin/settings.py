@@ -87,11 +87,11 @@ DATABASES = {
     # },
       'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'db',
-       'USER': 'superman',
-       'PASSWORD': 'supes',
-    #    'HOST': 'ezxicoin.herokuapps.com',
-        # 'port': '8071',
+       'NAME': 'dec4mjjoelbd42',
+       'USER': 'vtydnskpihnzhi',
+       'PASSWORD': 'af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4',
+       'HOST': 'ec2-52-71-64-111.compute-1.amazonaws.com',
+        'port': '5432',
         }
 }
 DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
