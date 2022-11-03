@@ -90,7 +90,7 @@ DATABASES = {
        'NAME': 'db',
        'USER': 'superman',
        'PASSWORD': 'supes',
-       'HOST': 'ezxicoin.herokuapps.com',
+    #    'HOST': 'ezxicoin.herokuapps.com',
         # 'port': '8071',
         }
 }
