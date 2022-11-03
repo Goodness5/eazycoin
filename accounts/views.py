@@ -52,16 +52,7 @@ def signup(request):
                       ['User.email'], 
                       fail_silently=False,
                     )
-                return mail()
-        user_count = User.objects.filter(email = email).count()
-
-        if user_count > 0:
-            messages.info(request,'email already exists')
-            return render(request, 'accounts/signup.html')
-        else:
-            user = User.objects.create_user(email = email, username = username, password = password, first_name = first_name, last_name = last_name)
-            messages.success(request, 'account successfully created')
-            auth_user = authenticate(username = username, password = password )
+                return mail(send_mail())
 
             return redirect('signin')
     else:
