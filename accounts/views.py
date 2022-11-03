@@ -77,7 +77,7 @@ def signin(request):
             login(request, auth_user)
             return redirect('dashboard')
         else:
-            messages.warning(request, " you don't have an account")
+            messages.warning(request, "incorrect username or password")
             return redirect('signin')
     else:
         
