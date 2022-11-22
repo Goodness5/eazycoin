@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-&#xu8k0)fazz6e@8$8)5l!8uvf@swws30bk3e-g+d5f*^)4-5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ezxicoin.herokuapp.com']
+ALLOWED_HOSTS = ['ezxicoin.herokuapp.com', '127.0.0.1',]
 
 
 # Application definition
@@ -81,18 +81,18 @@ WSGI_APPLICATION = 'eazycoin.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # },
-      'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'dec4mjjoelbd42',
-       'USER': 'vtydnskpihnzhi',
-       'PASSWORD': 'af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4',
-       'HOST': 'ec2-52-71-64-111.compute-1.amazonaws.com',
-        'port': '5432',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    #   'default': {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': 'dec4mjjoelbd42',
+    #    'USER': 'vtydnskpihnzhi',
+    #    'PASSWORD': 'af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4',
+    #    'HOST': 'ec2-52-71-64-111.compute-1.amazonaws.com',
+    #     'port': '5432',
+    #     }
 }
 # DATABASE_URL ='postgres://vtydnskpihnzhi:af5b4005a922e697b0892b3eb065059e211509305fb18427423294279be2cec4@ec2-52-71-64-111.compute-1.amazonaws.com:5432/dec4mjjoelbd42'
 
