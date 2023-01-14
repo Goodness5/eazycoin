@@ -38,7 +38,7 @@ def signup(request):
             messages.warning(request,'email already exists')
             return redirect('signup')
         if username == None:
-            messages.warning(request, 'username feild cannot be blank')
+            messages.warning(request, 'username field cannot be blank')
             return username
         else:
             user = User.objects.create_user(email = email, username = username, password = password, first_name = first_name, last_name = last_name)

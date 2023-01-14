@@ -4,8 +4,7 @@ from email.policy import default
 from django.shortcuts import render, redirect
 from pyexpat import model
 from pyexpat.errors import messages
-from re import template
-from urllib import request
+
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django import forms
